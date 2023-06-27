@@ -1,0 +1,11 @@
+.header__title {
+  font-family: 'RobotoCondensed';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 21px;
+}
+
+.header__title:hover {
+  cursor: pointer;
+}

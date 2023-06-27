@@ -1,0 +1,9 @@
+.header__basket {
+  width: 60px;
+  height: 60px;
+}
+
+.header__basket:hover {
+  transform: rotate(-5deg);
+  transition: transform .5s ease;
+}

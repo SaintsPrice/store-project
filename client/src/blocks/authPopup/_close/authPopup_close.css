@@ -1,0 +1,14 @@
+.authPopup_close {
+  background-image: url(../../../asset/close-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0);
+  width: 25px;
+  height: 25px;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: -20px;
+}

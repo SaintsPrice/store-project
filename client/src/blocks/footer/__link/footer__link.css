@@ -1,0 +1,10 @@
+.footer__link {
+  display: flex;
+  align-items: center;
+  font-family: 'RobotoCondensed';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 15px;
+  margin-bottom: 10px;
+}

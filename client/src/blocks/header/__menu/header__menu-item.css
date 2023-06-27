@@ -1,0 +1,25 @@
+.header__menu-item {
+  display: inline-block;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: 'RobotoCondensed';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 15px;
+  text-align: center;
+  color: #2A2A2A;
+  padding: 5px 0;
+  transition: background-color .5s, color .6s ease;
+}
+
+.header__menu-item:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.header__menu-item_active {
+  transition: background-color .5s ease;
+  background-color: rgba(48, 48, 223, .2);
+  border-radius: 10px;
+}

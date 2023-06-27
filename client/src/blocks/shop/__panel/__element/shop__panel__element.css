@@ -1,0 +1,15 @@
+.shop__panel__element {
+  font-family: 'RobotoCondensed';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 15px;
+  padding-bottom: 5px;
+  transition: font-size 1s, line-height 1s;
+}
+
+.shop__panel__element:hover {
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 16px;
+}

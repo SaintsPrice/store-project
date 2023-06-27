@@ -11,10 +11,10 @@ class LoginService {
       throw ApiError.badRequest(`Пользователь с почтовым адресом ${email} уже существует `)
     }
     const hash = await bcrypt.hash(password, 10)
-    const user = await User.create({email, password: hash, role})
+    const user = await User.create({email, password: hash})
     const basket = await Basket.create({userId: user.id})
 
-    const tokens = tokenService.generateTokens(user.id, email, role)
+    const tokens = tokenService.generateTokens(user.id, email, user.role)
 
     await tokenService.saveTokens(user.id, tokens.refreshToken)
 
@@ -23,7 +23,7 @@ class LoginService {
       user: {
         id: user.id,
         email,
-        role
+        role: user.role
       },
       basket: {
         id: basket.id,
@@ -43,7 +43,7 @@ class LoginService {
     }
 
     const basket = await Basket.findOne({where: {userId: user.id}})
-    const tokens = tokenService.generateTokens(user.id, email, role)
+    const tokens = tokenService.generateTokens(user.id, email, user.role)
 
     await tokenService.saveTokens(user.id, tokens.refreshToken)
 
@@ -52,7 +52,7 @@ class LoginService {
       user: {
         id: user.id,
         email,
-        role
+        role: user.role
       },
       basket: {
         id: basket.id,

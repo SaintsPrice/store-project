@@ -1,0 +1,10 @@
+.auth__bar__button {
+  border: none;
+  background-color: #F8F1FF;
+  font-family: 'RobotoCondensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 12px;
+  margin-left: 10px;
+}

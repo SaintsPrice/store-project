@@ -1,0 +1,13 @@
+.authPopup__input {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(61, 58, 58, .05);
+  max-width: 500px;
+  height: 40px;
+  margin: 0 60px 0;
+  font-family: 'RobotoCondensed';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 10px;
+}

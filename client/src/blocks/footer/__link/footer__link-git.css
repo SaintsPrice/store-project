@@ -1,0 +1,10 @@
+.footer__link-git {
+  display: inline-block;
+  margin-right: 10px;
+  background-image: url(../../../asset/icons8-github.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
