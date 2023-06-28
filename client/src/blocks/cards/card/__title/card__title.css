@@ -1,0 +1,10 @@
+.card__title {
+  justify-content: center;
+  align-items: center;
+  font-family: 'RobotoCondensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+}

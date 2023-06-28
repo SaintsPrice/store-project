@@ -1,0 +1,17 @@
+.brand-bar__element {
+  list-style-type: none;
+  cursor: pointer;
+  font-family: 'RobotoCondensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 16px;
+  text-align: center;
+  color: #2A2A2A;
+  padding: 5px 0;
+  transition: background-color .5s, color .5s ease;
+}
+
+.brand-bar__element:hover {
+  color: blue;
+}

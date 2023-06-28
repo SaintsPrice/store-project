@@ -1,12 +1,16 @@
+:root {
+  --background-color: #E5E5E5;
+}
+
 html {
   margin: 0 auto;
 }
 
 body {
-  background-color: #E5E5E5;
+  background-color: var(--background-color);
 }
 
-h1 {
+h1, h2, h3, p {
   margin: 0;
 }
 
@@ -32,6 +36,31 @@ h1 {
 
 @import url(./blocks/shop/__panel/shop__panel.css);
 @import url(./blocks/shop/__panel/__element/shop__panel__element.css);
+
+@import url(./blocks/brand-bar/brand-bar.css);
+@import url(./blocks/brand-bar/__element/brand-bar__element.css);
+@import url(./blocks/brand-bar/__element/_active/brand-bar__element_active.css);
+
+@import url(./blocks/cards/card/card.css);
+@import url(./blocks/cards/cards.css);
+@import url(./blocks/cards/card/__caption/card.caption.css);
+@import url(./blocks/cards/card/__description/card__description.css);
+@import url(./blocks/cards/card/__image/card__image.css);
+@import url(./blocks/cards/card/__rating/card__rating.css);
+@import url(./blocks/cards/card/__rating/__image/card__rating__image.css);
+@import url(./blocks/cards/card/__title/card__title.css);
+@import url(./blocks/cards/card/__price/card__price.css);
+@import url(./blocks/cards/card/__rating/__container/card__rating__container.css);
+
+@import url(./blocks/device/device.css);
+@import url(./blocks/device/__image/device__image.css);
+@import url(./blocks/device/__description/device__description.css);
+@import url(./blocks/device/__title/device__title.css);
+@import url(./blocks/device/__rating/device__rating.css);
+@import url(./blocks/device/__caption/device__caption.css);
+@import url(./blocks/device/__price/device__price.css);
+@import url(./blocks/device/__basket/device__basket.css);
+@import url(./blocks/device/__info/device__info.css);
 
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__container/footer__container.css);

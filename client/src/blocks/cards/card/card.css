@@ -1,0 +1,13 @@
+.card {
+  display: grid;
+  justify-items: center;
+  border-radius: 10px;
+  grid-template-rows: 500px 70px 50px;
+  grid-template-columns: repeat(1fr);
+  padding: 10px;
+  grid-template-areas: 
+  "image image image"
+  "description description description"
+  "price price price"
+  ;
+}

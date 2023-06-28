@@ -1,7 +1,18 @@
+import { observer } from "mobx-react-lite"
+import { useEffect } from "react"
 import { NavLink } from "react-router-dom"
 import basket from '../asset/Basket.svg'
+import { useStores } from "../contexts/rootStoreContext"
 
 function TypeBar(props) {
+
+  const {device} = useStores()
+
+  useEffect(() => {
+    device.getTypes()
+  }, [])
+
+  console.log(device.selectedType)
 
   function handlePopup() {
     props.setIsOpen(true)
@@ -9,13 +20,15 @@ function TypeBar(props) {
 
   return (
     <header className="header">
-      <h1 className="header__title">E-Store</h1>
+      <h1 className="header__title"><NavLink style={{textDecoration: 'none', color: '#2A2A2A'}} to='/'>E-Store</NavLink></h1>
       <nav className="header__menu">
         <ul className="header__menu">
-          <li className={`header__menu-item ${props.nameType === 'phone' ? 'header__menu-item_active' : ''}`}><NavLink to='/type/phone' className="header__menu-item">Смартфоны</NavLink></li>
-          <li className={`header__menu-item ${props.nameType === 'tv' ? 'header__menu-item_active' : ''}`}><NavLink to='/type/tv' className="header__menu-item">Телевизоры</NavLink></li>
-          <li className={`header__menu-item ${props.nameType === 'refrigerator' ? 'header__menu-item_active' : ''}`}><NavLink to='/type/refrigerator' className="header__menu-item">Холодильники</NavLink></li>
-          <li className={`header__menu-item ${props.nameType === 'notebook' ? 'header__menu-item_active' : ''}`}><NavLink to='/type/notebook' className="header__menu-item">Ноутбуки</NavLink></li>
+          {device.types.map((type) => {
+            return (
+              <li key={type.id} className={`header__menu-item ${type.id === device.selectedType && 'header__menu-item_active'}`} >
+                <NavLink to={`/type/${type.name}`} className="header__menu-item" onClick={() => device.setSelectedType(type.id)}>{type.name}</NavLink></li>
+            )
+          })}
         </ul>
       </nav>
       <div className="header__basket-menu">
@@ -26,4 +39,4 @@ function TypeBar(props) {
   )
 }
 
-export default TypeBar
+export default observer(TypeBar)

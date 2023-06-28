@@ -1,0 +1,5 @@
+.brand-bar__element_active {
+  transition: background-color .5s ease;
+  background-color: rgba(48, 48, 223, .2);
+  border-radius: 10px;
+}

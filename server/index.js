@@ -9,11 +9,14 @@ const router = require('./routes/index');
 const path = require('path');
 const errorHandler = require('./middleware/ErrorHandlingMiddleware');
 
-const {PORT = 5000} = process.env;
+const {PORT = 5000, CLIENT_URL} = process.env;
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: CLIENT_URL,
+  credentials: true
+}));
 app.use(cookieParser())
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, 'static')))

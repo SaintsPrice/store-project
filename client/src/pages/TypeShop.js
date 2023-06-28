@@ -1,29 +1,35 @@
-import { useState } from "react"
-import { useParams } from "react-router-dom"
-import LoginPopup from "../components/LoginPopup"
-import RegisterPopup from "../components/RegisterPopup"
-import TypeBar from "../components/TypeBar"
+import { useEffect } from "react"
+import {observer} from "mobx-react-lite";
+import { useStores } from "../contexts/rootStoreContext"
+import BrandBar from "../components/BrandBar";
+import Card from "../components/Card";
 
-function TypeShop() {
+function TypeShop () {
 
-  const {name} = useParams()
+  const {device} = useStores()
 
-  const [isOpenedLogin, setIsOpenedLogin] = useState(false)
-  const [isOpenedRegister, setIsOpenedRegister] = useState(false)
+  useEffect(() => {
+    device.getDevices(device.selectedType, device.selectedBrand)
+  }, [device.selectedType, device.selectedBrand])
 
-  function closeAllPopup() {
-    setIsOpenedLogin(false)
-    setIsOpenedRegister(false)
-  }
+  //console.log(device.types)
+  console.log(device.selectedType)
+  console.log(device.selectedBrand)
 
   return (
     <>
-      <TypeBar setIsOpen={setIsOpenedLogin} nameType={name}/>
-
-      <LoginPopup isOpen={isOpenedLogin} closePopup={closeAllPopup} setOpenLogin={setIsOpenedLogin} setOpenRegister={setIsOpenedRegister} />
-      <RegisterPopup isOpen={isOpenedRegister} closePopup={closeAllPopup} setOpenLogin={setIsOpenedLogin} setOpenRegister={setIsOpenedRegister}/>
+      <BrandBar />
+      <div className="cards">
+        {
+          device.devices.map((card) => {
+            return (
+              <Card key={card.id} id={card.id} name={card.name} image={card.img} price={card.price} rating={card.rating} />
+            )
+          })
+        }
+      </div>
     </>
   )
 }
 
-export default TypeShop
+export default observer(TypeShop)

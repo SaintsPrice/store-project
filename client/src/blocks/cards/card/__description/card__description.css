@@ -1,0 +1,6 @@
+.card__description {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-around;
+  grid-area: description;
+}
