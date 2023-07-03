@@ -1,0 +1,11 @@
+.device__rating__star {
+  font-size: 70px;
+  cursor: pointer;
+}
+
+.device__rating__star::after:hover {
+  content: '★';
+  position: absolute;
+  top: 0;
+  left: 0;
+}

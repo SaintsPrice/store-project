@@ -78,6 +78,35 @@ class DeviceController {
         next(e)
       }
     }
+
+    async createDeviceInfo(req, res, next) {
+      try {
+        const {info} = req.body
+        info.forEach(i =>
+          DeviceInfo.create({
+            title: i.title,
+            description: i.description,
+            deviceId: i.deviceId
+          })
+          )
+          return res.json('Ok')
+      }
+      catch(e) {
+        next(e)
+      }
+    }
+
+    async getDeviceInfo(req, res, next) {
+      try {
+        const {deviceId} = req.query
+         const device = await DeviceInfo.findAll({where: {deviceId}})
+
+        return res.json(device)
+      }
+      catch(e) {
+        next(e)
+      }
+    }
 }
 
 module.exports = new DeviceController()

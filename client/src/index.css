@@ -57,10 +57,16 @@ h1, h2, h3, p {
 @import url(./blocks/device/__description/device__description.css);
 @import url(./blocks/device/__title/device__title.css);
 @import url(./blocks/device/__rating/device__rating.css);
+@import url(./blocks/device/__rating/__star/device__rating__star.css);
+@import url(./blocks/device/__rating/__value/device__rating__value.css);
 @import url(./blocks/device/__caption/device__caption.css);
 @import url(./blocks/device/__price/device__price.css);
 @import url(./blocks/device/__basket/device__basket.css);
 @import url(./blocks/device/__info/device__info.css);
+@import url(./blocks/device/__info/__heading/device__info__heading.css);
+@import url(./blocks/device/__info/__element/device__info__element.css);
+@import url(./blocks/device/__info/__title/device__info__title.css);
+@import url(./blocks/device/__info/__description/device__info__description.css);
 
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__container/footer__container.css);

@@ -7,6 +7,7 @@ class DeviceStore {
   brands = []
   devices = []
   oneDevice = {}
+  deviceInfo = []
   selectedType = {}
   selectedBrand = {}
 
@@ -38,6 +39,10 @@ class DeviceStore {
 
   setSelectedBrand(selectedBrand) {
     this.selectedBrand = selectedBrand
+  }
+
+  setDeviceInfo(deviceInfo) {
+    this.deviceInfo = deviceInfo
   }
 
   async getTypes() {
@@ -78,6 +83,17 @@ class DeviceStore {
       const {data} = await DeviceService.getOneDevices(deviceId)
 
       this.setDevice(data)
+    }
+    catch(e) {
+      console.log(e.response.data.message)
+    }
+  }
+
+  async getDeviceInfo(deviceId) {
+    try {
+      const {data} = await DeviceService.getDeviceInfo(deviceId)
+
+      this.setDeviceInfo(data)
     }
     catch(e) {
       console.log(e.response.data.message)

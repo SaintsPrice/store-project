@@ -1,7 +1,9 @@
-.device__price {
+.device__info__heading {
+  margin: 0 auto;
+  padding-top: 50px;
   font-family: 'RobotoCondensed';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 35px;
   text-align: center;
 }

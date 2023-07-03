@@ -1,7 +1,8 @@
-.device__price {
+.device__rating__value {
   font-family: 'RobotoCondensed';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 35px;
   text-align: center;
+  padding-left: 10px;
 }

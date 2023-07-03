@@ -18,4 +18,10 @@ export default class DeviceService {
   static async getOneDevices(deviceId) {
     return await $host.get(`/api/device/${deviceId}`)
   }
+
+  static async getDeviceInfo(deviceId) {
+    return await $host.get('/api/device-info', {params: {
+      deviceId
+    }})
+  }
 }
