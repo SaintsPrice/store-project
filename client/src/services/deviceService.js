@@ -9,9 +9,9 @@ export default class DeviceService {
     return await $host.get('/api/brand')
   }
 
-  static async getDevices(typeId, brandId) {
+  static async getDevices(typeId, brandId, page, limit = 6) {
     return await $host.get('/api/device', {params: {
-      typeId, brandId
+      typeId, brandId, page, limit
     }})
   }
 

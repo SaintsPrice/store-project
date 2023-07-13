@@ -1,20 +1,22 @@
-import {makeAutoObservable} from 'mobx'
-import DeviceService from '../services/deviceService'
+import {makeAutoObservable} from 'mobx';
+import DeviceService from '../services/deviceService';
 
 class DeviceStore {
 
-  types = []
-  brands = []
-  devices = []
-  oneDevice = {}
-  deviceInfo = []
-  selectedType = {}
-  selectedBrand = {}
+  types = [];
+  brands = [];
+  devices = [];
+  oneDevice = {};
+  basketDevices = []
+  deviceInfo = [];
+  selectedType = {};
+  selectedBrand = {};
+  page = 1;
+  totalCount = 0;
+  limit = 6;
 
   constructor() {
-
     makeAutoObservable(this)
-
   }
 
   setTypes(types) {
@@ -45,6 +47,26 @@ class DeviceStore {
     this.deviceInfo = deviceInfo
   }
 
+  setPage(page) {
+    this.page = page
+  }
+
+  setTotalCount(totalCount) {
+    this.totalCount = totalCount
+  }
+
+  setLimit(limit) {
+    this.limit = limit
+  }
+
+  setBasketDevices(basketDevices) {
+    this.basketDevices.push(basketDevices)
+  }
+
+  deleteBasketDevice(index) {
+    this.basketDevices.splice(index, 1)
+  }
+
   async getTypes() {
     try {
       const {data} = await DeviceService.getTypes()
@@ -67,11 +89,11 @@ class DeviceStore {
     }
   }
 
-  async getDevices(typeId, brandId) {
+  async getDevices(typeId, brandId, page, limit) {
     try {
-      const {data} = await DeviceService.getDevices(typeId, brandId)
-
+      const {data} = await DeviceService.getDevices(typeId, brandId, page, limit)
       this.setDevices(data.rows)
+      this.setTotalCount(data.count)
     }
     catch(e) {
       console.log(e.response.data.message)

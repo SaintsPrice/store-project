@@ -6,7 +6,7 @@ import { useStores } from "../contexts/rootStoreContext"
 
 function TypeBar(props) {
 
-  const {device} = useStores()
+  const {device, user} = useStores()
 
   useEffect(() => {
     device.getTypes()
@@ -16,6 +16,10 @@ function TypeBar(props) {
 
   function handlePopup() {
     props.setIsOpen(true)
+  }
+
+  function handleLogout() {
+    user.logout()
   }
 
   return (
@@ -32,8 +36,10 @@ function TypeBar(props) {
         </ul>
       </nav>
       <div className="header__basket-menu">
-        <button className="header__login" onClick={handlePopup}>Войти</button>
-        <NavLink to="/basket"><img src={basket} className="header__basket" /></NavLink>
+        {user.isAuth ? <button className="header__login" onClick={handleLogout}>Выйти</button> : <button className="header__login" onClick={handlePopup}>Войти</button>}
+        <div className="header__basket__container">
+          <NavLink to="/basket"><img src={basket} className="header__basket" />{device.basketDevices.length > 0 && <span className="header__basket__count">{device.basketDevices.length}</span>}</NavLink>
+        </div>
       </div>
     </header>
   )

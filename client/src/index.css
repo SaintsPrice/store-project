@@ -21,7 +21,10 @@ h1, h2, h3, p {
 @import url(./blocks/header/__menu/_active/header__menu-item_active.css);
 @import url(./blocks/header/__basket/header__basket-menu.css);
 @import url(./blocks/header/__login/header__login.css);
+@import url(./blocks/header/__greeting/header__greeting.css);
 @import url(./blocks/header/__basket/header__basket.css);
+@import url(./blocks/header/__basket/__container/header__basket__container.css);
+@import url(./blocks/header/__basket/__count/header__basket__count.css);
 @import url(./blocks/header/__image/header__image.css);
 
 @import url(./blocks/authPopup/authPopup.css);
@@ -67,6 +70,27 @@ h1, h2, h3, p {
 @import url(./blocks/device/__info/__element/device__info__element.css);
 @import url(./blocks/device/__info/__title/device__info__title.css);
 @import url(./blocks/device/__info/__description/device__info__description.css);
+
+@import url(./blocks/pagination/pagination.css);
+@import url(./blocks/pagination/__page/pagination__page.css);
+@import url(./blocks/pagination/__page/_active/pagination__page_active.css);
+
+@import url(./blocks/basket/_empty/basket_empty.css);
+@import url(./blocks/basket/_empty/__title/basket_empty__title.css);
+@import url(./blocks/basket/_empty/__description/basket_empty__description.css);
+@import url(./blocks/basket/_empty/__refs/basket_empty__refs.css);
+@import url(./blocks/basket/_empty/__ref/basket_empty__ref.css);
+@import url(./blocks/basket/basket.css);
+@import url(./blocks/basket/__device/basket__device.css);
+@import url(./blocks/basket/__device/__image/basket__device__image.css);
+@import url(./blocks/basket/__device/__title/basket__device__title.css);
+@import url(./blocks/basket/__device/__price/basket__device__price.css);
+@import url(./blocks/basket/__panel/basket__panel.css);
+@import url(./blocks/basket/__panel/__title/basket__panel__title.css);
+@import url(./blocks/basket/__panel/__info/basket__panel__info.css);
+@import url(./blocks/basket/__panel/__number/basket__panel__number.css);
+@import url(./blocks/basket/__panel/__price/basket__panel__price.css);
+@import url(./blocks/basket/__panel/__button/basket__panel__button.css);
 
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__container/footer__container.css);

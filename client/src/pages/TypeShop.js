@@ -9,12 +9,17 @@ function TypeShop () {
   const {device} = useStores()
 
   useEffect(() => {
-    device.getDevices(device.selectedType, device.selectedBrand)
-  }, [device.selectedType, device.selectedBrand])
+    device.getDevices(device.selectedType, device.selectedBrand, device.page, device.limit)
+  }, [device.selectedType, device.selectedBrand, device.page, device.limit])
 
-  //console.log(device.types)
-  console.log(device.selectedType)
-  console.log(device.selectedBrand)
+  const pageCount = Math.ceil(device.totalCount / device.limit)
+  const pages = []
+
+  for(let i = 0; i <pageCount; i++) {
+    pages.push(i+1)
+  }
+
+  console.log(device.devices)
 
   return (
     <>
@@ -27,6 +32,13 @@ function TypeShop () {
             )
           })
         }
+      </div>
+      <div className="pagination">
+      {pages.map((page) => {
+        return (
+          <p key={page} onClick={() => device.setPage(page)} className={`pagination__page ${device.page === page && "pagination__page_active"}`}>{page}</p>
+        )
+      })}
       </div>
     </>
   )

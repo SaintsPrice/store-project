@@ -1,0 +1,12 @@
+.basket__panel {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: fixed;
+  padding: 40px;
+  top: 15%;
+  right: 10%;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+}

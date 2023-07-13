@@ -3,10 +3,11 @@ const { Token } = require("../models/models")
 const {SECRET_ACCESS_KEY, SECRET_REFRESH_KEY} = process.env
 
 class TokenService {
-  generateTokens(id, email, role) {
+  generateTokens(id, email, name, role) {
     const payload = {
       id,
       email,
+      name,
       role
     }
 

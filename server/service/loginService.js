@@ -4,17 +4,17 @@ const bcrypt = require('bcrypt')
 const tokenService = require("./tokenService")
 
 class LoginService {
-  async registration(email, password, role) {
+  async registration(email, password, name, family, role) {
     const candidate = await User.findOne({where:{email}})
 
     if(candidate) {
       throw ApiError.badRequest(`Пользователь с почтовым адресом ${email} уже существует `)
     }
     const hash = await bcrypt.hash(password, 10)
-    const user = await User.create({email, password: hash})
+    const user = await User.create({email, password: hash, name, family})
     const basket = await Basket.create({userId: user.id})
 
-    const tokens = tokenService.generateTokens(user.id, email, user.role)
+    const tokens = tokenService.generateTokens(user.id, email, name, user.role)
 
     await tokenService.saveTokens(user.id, tokens.refreshToken)
 
@@ -23,6 +23,7 @@ class LoginService {
       user: {
         id: user.id,
         email,
+        name,
         role: user.role
       },
       basket: {
@@ -93,6 +94,7 @@ class LoginService {
       user: {
         id: user.id,
         email: user.email,
+        name: user.name,
         role: user.role
       }
     }

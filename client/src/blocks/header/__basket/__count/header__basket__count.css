@@ -1,0 +1,18 @@
+.header__basket__count {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: inline-block;
+  text-decoration: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: 'RobotoCondensed';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

@@ -10,8 +10,6 @@ function DevicePage() {
 
   const [rating, setRating] = useState(0)
   const [hoverRating, setHoverRating] = useState(0)
-  console.log(rating)
-  console.log(hoverRating)
 
   const {device} = useStores()
 
@@ -44,7 +42,7 @@ function DevicePage() {
         </div>
         <div className="device__caption">
           <p className="device__price">{device.oneDevice.price + ' руб.'}</p>
-          <button className="device__basket">Добавить в корзину</button>
+          <button className="device__basket" onClick={() => device.setBasketDevices(device.oneDevice)}>Добавить в корзину</button>
         </div>
       </div>
       <div className="device__info">

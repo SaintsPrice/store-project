@@ -9,17 +9,17 @@ export const authRoutes = [
   {
     path: ADMIN_ROUTE,
     Component: Admin
-  },
-  {
-    path: BASKET_ROUTE,
-    Component: Basket
-  },
+  }
 ];
 
 export const publicRoutes = [
   {
     path: SHOP_ROUTE,
     Component: Shop
+  },
+  {
+    path: BASKET_ROUTE,
+    Component: Basket
   },
   {
     path: TYPE_ROUTE + '/:type',

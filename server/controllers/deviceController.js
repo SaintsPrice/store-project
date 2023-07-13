@@ -39,7 +39,7 @@ class DeviceController {
         let devices
 
         page = page || 1
-        limit = limit || 30
+        limit = limit || 9
 
         let offset = page * limit - limit
 
