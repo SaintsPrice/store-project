@@ -15,7 +15,7 @@ function BasketWithCards() {
         return acc + i.price
       }, 0))
     }
-  }, [device.basketDevices])
+  }, [device.basketDevices.length])
 
   return (
     <div className="basket">

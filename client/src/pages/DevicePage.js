@@ -11,14 +11,24 @@ function DevicePage() {
   const [rating, setRating] = useState(0)
   const [hoverRating, setHoverRating] = useState(0)
 
-  const {device} = useStores()
+  const {device, user} = useStores()
 
   useEffect(() => {
     device.getOneDevice(id)
     device.getDeviceInfo(id)
+    user.getRate(id)
   }, [])
 
-  console.log(device.deviceInfo)
+  useEffect(()=> {
+    if(user.devicesRating.length > 0) {
+      setRating(user.devicesRating.reduce((acc, item) => {
+        return acc + item.rate
+      }, 0) / user.devicesRating.length)
+    }
+    else {
+      setRating(0)
+    }
+  }, [user.devicesRating.length])
 
   return (
     <div>
@@ -27,17 +37,17 @@ function DevicePage() {
         <div className="device__description">
           <h2 className="device__title">{device.oneDevice.name}</h2>
           <div className="device__rating">
-            <div className="device__rating__star" onMouseEnter={() => setHoverRating(1)} onMouseLeave={() => setHoverRating(0)} onClick={() => setRating(1)}>
+            <div className="device__rating__star" onMouseEnter={() => setHoverRating(1)} onMouseLeave={() => setHoverRating(0)} onClick={() => user.setRate(1, user.user.id, id)}>
               {rating > 0 || hoverRating > 0 ? '★' : '☆'}</div>
-            <div className="device__rating__star" onMouseEnter={() => setHoverRating(2)} onMouseLeave={() => setHoverRating(0)} onClick={() => setRating(2)}>
+            <div className="device__rating__star" onMouseEnter={() => setHoverRating(2)} onMouseLeave={() => setHoverRating(0)} onClick={() => user.setRate(2, user.user.id, id)}>
               {rating > 1 || hoverRating > 1 ? '★' : '☆'}</div>
-            <div className="device__rating__star" onMouseEnter={() => setHoverRating(3)} onMouseLeave={() => setHoverRating(0)} onClick={() => setRating(3)}>
+            <div className="device__rating__star" onMouseEnter={() => setHoverRating(3)} onMouseLeave={() => setHoverRating(0)} onClick={() => user.setRate(3, user.user.id, id)}>
               {rating > 2 || hoverRating > 2 ? '★' : '☆'}</div>
-            <div className="device__rating__star" onMouseEnter={() => setHoverRating(4)} onMouseLeave={() => setHoverRating(0)} onClick={() => setRating(4)}>
+            <div className="device__rating__star" onMouseEnter={() => setHoverRating(4)} onMouseLeave={() => setHoverRating(0)} onClick={() => user.setRate(4, user.user.id, id)}>
               {rating > 3 || hoverRating > 3 ? '★' : '☆'}</div>
-            <div className="device__rating__star" onMouseEnter={() => setHoverRating(5)} onMouseLeave={() => setHoverRating(0)} onClick={() => setRating(5)}>
+            <div className="device__rating__star" onMouseEnter={() => setHoverRating(5)} onMouseLeave={() => setHoverRating(0)} onClick={() => user.setRate(5, user.user.id, id)}>
               {rating > 4 || hoverRating > 4 ? '★' : '☆'}</div>
-            <p className="device__rating__value">{device.oneDevice.rating}</p>
+            <p className="device__rating__value">{rating.toFixed(1)}</p>
           </div>
         </div>
         <div className="device__caption">

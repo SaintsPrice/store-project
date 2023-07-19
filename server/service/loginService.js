@@ -53,6 +53,7 @@ class LoginService {
       user: {
         id: user.id,
         email,
+        name: user.name,
         role: user.role
       },
       basket: {

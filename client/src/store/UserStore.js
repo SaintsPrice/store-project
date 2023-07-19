@@ -7,6 +7,7 @@ class UserStore {
 
   isAuth = false;
   user = {};
+  devicesRating = []
 
   constructor() {
     makeAutoObservable(this)
@@ -18,6 +19,14 @@ class UserStore {
 
   setUser(user) {
     this.user = user
+  }
+
+  setDevicesRating(deviceRating) {
+    this.devicesRating = deviceRating
+  }
+
+  setDeviceNewRating(rating) {
+    this.devicesRating.push(rating)
   }
 
   async registration(email, password, name, family, role) {
@@ -40,6 +49,7 @@ class UserStore {
 
       localStorage.setItem('token', data.accessToken)
       this.setIsAuth(true)
+      console.log(data)
       this.setUser(data.user)
       
     }
@@ -74,6 +84,27 @@ class UserStore {
       console.log(e.message)
     }
   }
+
+  async setRate(rate, userId, deviceId) {
+    try {
+      const {data} = await UserService.rate(rate, userId, deviceId)
+
+      this.setDeviceNewRating(data)
+    }
+    catch(e) {
+      console.log(e.message)
+    }
+  }
+  async getRate(deviceId) {
+    try {
+      const {data} = await UserService.getDeviceRate(deviceId)
+
+      this.setDevicesRating(data)
+    }
+    catch(e) {
+      console.log(e.message)
+    }
+  } 
 }
 
 export default new UserStore()
