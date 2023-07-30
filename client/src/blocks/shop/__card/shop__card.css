@@ -1,0 +1,11 @@
+.shop__card {
+    display: grid;
+    justify-items: center;
+    border-radius: 10px;
+    gap: 20px;
+    padding: 10px;
+    grid-template-areas: 
+    "image"
+    "description"
+    ;
+}

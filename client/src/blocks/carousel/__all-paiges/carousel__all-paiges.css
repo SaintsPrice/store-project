@@ -1,0 +1,6 @@
+.carousel__all-paiges {
+    display: inline-flex;
+    margin: 0 auto;
+    max-width: 1100px;
+    transition: transform .5s ease;
+}

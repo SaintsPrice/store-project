@@ -25,7 +25,13 @@ h1, h2, h3, p {
 @import url(./blocks/header/__basket/header__basket.css);
 @import url(./blocks/header/__basket/__container/header__basket__container.css);
 @import url(./blocks/header/__basket/__count/header__basket__count.css);
-@import url(./blocks/header/__image/header__image.css);
+
+@import url(./blocks/carousel/carousel.css);
+@import url(./blocks/carousel/__window/carousel__window.css);
+@import url(./blocks/carousel/__all-paiges/carousel__all-paiges.css);
+@import url(./blocks/carousel/__image/carousel__image.css);
+@import url(./blocks/carousel/__arrow/carousel__arrow.css);
+
 
 @import url(./blocks/authPopup/authPopup.css);
 @import url(./blocks/authPopup/_opened/authPopup_opened.css);
@@ -39,10 +45,21 @@ h1, h2, h3, p {
 
 @import url(./blocks/shop/__panel/shop__panel.css);
 @import url(./blocks/shop/__panel/__element/shop__panel__element.css);
+@import url(./blocks/shop/__panel/__list/shop__panel__list.css);
+@import url(./blocks/shop/__cards/shop__cards.css);
 
 @import url(./blocks/brand-bar/brand-bar.css);
 @import url(./blocks/brand-bar/__element/brand-bar__element.css);
 @import url(./blocks/brand-bar/__element/_active/brand-bar__element_active.css);
+
+@import url(./blocks/shop/__card/shop__card.css);
+@import url(./blocks/shop/__card/__image/shop__card__image.css);
+@import url(./blocks/shop/__card/__description/shop__description.css);
+@import url(./blocks/shop/__card/__price/shop__card__price.css);
+@import url(./blocks/shop/__card/__rating/shop__card__rating__container.css);
+@import url(./blocks/shop/__card/__rating/shop__card__rating__image.css);
+@import url(./blocks/shop/__card/__rating/shop__card__rating.css);
+@import url(./blocks/shop/__card/__title/shop__card__title.css);
 
 @import url(./blocks/cards/card/card.css);
 @import url(./blocks/cards/cards.css);
