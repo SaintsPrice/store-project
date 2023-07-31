@@ -5,7 +5,6 @@ import headerImage3 from '../asset/e5cbafd7-e932-4439-a48f-690069f860af.jpg'
 import { useStores } from '../contexts/rootStoreContext'
 import Carousel from '../components/Carousel'
 import { useEffect } from 'react'
-import Card from '../components/Card'
 import ShopCard from '../components/ShopCard'
 
 function Shop() {

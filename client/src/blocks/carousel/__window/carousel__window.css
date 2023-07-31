@@ -1,3 +1,9 @@
 .carousel__window {
     overflow: hidden;
 }
+
+@media (max-width: 1024px) {
+    .carousel__window {
+        max-width: 80%;
+    }
+}

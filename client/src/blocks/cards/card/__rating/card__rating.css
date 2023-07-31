@@ -6,3 +6,17 @@
   line-height: 16px;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .card__rating {
+    font-size: 25px;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: 425px) {
+  .card__rating {
+    font-size: 20px;
+    line-height: 16px;
+  }
+}

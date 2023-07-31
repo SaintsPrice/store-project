@@ -3,3 +3,9 @@
   align-items: center;
   gap: 5px;
 }
+
+@media (max-width: 425px) {
+  .card__rating__container {
+    gap: 2px;
+  }
+}

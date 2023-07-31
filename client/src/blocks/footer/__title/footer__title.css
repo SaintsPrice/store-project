@@ -5,3 +5,10 @@
   font-size: 42px;
   line-height: 21px;
 }
+
+@media (max-width: 768px) {
+  .footer__title {
+    font-size: 34px;
+    line-height: 21px;
+  }
+}

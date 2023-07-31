@@ -3,3 +3,17 @@
     height: 225px;
     border-radius: 10px;
 }
+
+@media (max-width: 1024px) {
+    .shop__card__image {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .shop__card__image {
+        width: 120px;
+        height: 120px;
+      }
+  }

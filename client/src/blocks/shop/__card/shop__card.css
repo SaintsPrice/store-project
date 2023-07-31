@@ -9,3 +9,10 @@
     "description"
     ;
 }
+
+@media (max-width: 390px) {
+    .shop__card {
+        gap: 10px;
+        padding: 5px;
+      }
+  }

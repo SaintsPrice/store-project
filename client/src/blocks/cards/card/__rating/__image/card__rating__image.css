@@ -3,3 +3,10 @@
   height: 25px;
   float: right;
 }
+
+@media (max-width: 425px) {
+  .card__rating__image {
+    width: 20px;
+    height: 20px;
+  }
+}

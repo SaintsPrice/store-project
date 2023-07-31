@@ -15,3 +15,22 @@
   transition: color .6s ease;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .header__login {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 425px) {
+  .header__login {
+    font-size: 16px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .header__login {
+    font-size: 14px;
+  }
+}

@@ -5,3 +5,9 @@
     font-size: 20px;
     text-align: center;
 }
+
+@media (max-width: 390px) {
+    .shop__card__price {
+        font-size: 12px;
+      }
+  }

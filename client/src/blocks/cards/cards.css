@@ -6,3 +6,31 @@
   gap: 15px;
   padding-bottom: 50px;
 }
+
+@media (max-width: 1024px) {
+  .cards {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 425px) {
+  .cards {
+    max-width: 425px;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 375px) {
+  .cards {
+    max-width: 260px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}

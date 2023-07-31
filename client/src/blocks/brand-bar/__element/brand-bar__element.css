@@ -15,3 +15,10 @@
 .brand-bar__element:hover {
   color: blue;
 }
+
+@media (max-width: 425px) {
+  .brand-bar__element {
+    font-size: 22px;
+    line-height: 16px;
+  }
+}

@@ -11,3 +11,17 @@
   "price price price"
   ;
 }
+
+@media (max-width: 768px) {
+  .card {
+    grid-template-rows: 280px 60px 40px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 375px) {
+  .card {
+    grid-template-rows: 300px 50px 30px;
+    padding: 5px;
+  }
+}

@@ -1,30 +1,30 @@
-import headerImage1 from '../asset/68076731-d2fd-4d40-9c4b-7fbe7ec35d9e.jpg'
-import headerImage2 from '../asset/c1250968-3a8b-45a3-bcd6-2be27781d145.jpg'
-import headerImage3 from '../asset/e5cbafd7-e932-4439-a48f-690069f860af.jpg'
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Children, useState } from 'react';
+import { useState } from 'react';
 
 function Carousel(props) {
 
     const [offset, setOffset] = useState(0)
 
-    let imageWidth = 1100
+    let pageWidth = window.innerWidth < 1100 ? window.innerWidth * .8 : 1100
 
     function handleArrowLeft() {
         setOffset((currentOffset) => {
-            const newOffset = currentOffset + imageWidth
+            const newOffset = currentOffset + pageWidth
 
-            return newOffset
+            return Math.min(newOffset, 0)
         })
     }
 
     function handleArrowRight() {
         setOffset((currentOffset) => {
-            const newOffset = currentOffset - imageWidth
-
-            return newOffset
+            const newOffset = currentOffset - pageWidth
+            
+            const maxOffset = -((props.children.length - 1) * pageWidth)
+            console.log(props.children.length)
+            return Math.max(newOffset, maxOffset)
         })
     }
+
 
     return (
         <div className='carousel'>

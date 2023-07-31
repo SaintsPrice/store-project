@@ -7,3 +7,17 @@
   transform: rotate(-5deg);
   transition: transform .5s ease;
 }
+
+@media (max-width: 768px) {
+  .header__basket {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 425px) {
+  .header__basket {
+    width: 35px;
+    height: 35px;
+  }
+}
