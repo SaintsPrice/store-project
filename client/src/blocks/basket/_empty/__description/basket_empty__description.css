@@ -5,3 +5,9 @@
   font-size: 25px;
   text-align: center; 
 }
+
+@media (max-width: 425px) {
+  .basket_empty__description {
+    font-size: 20px; 
+  }
+}

@@ -3,3 +3,15 @@
   margin: 0 auto;
   padding: 400px 0 400px;
 }
+
+@media (max-width: 768px) {
+  .basket_empty {
+    padding: 250px 0 250px;
+  }
+}
+
+@media (max-width: 425px) {
+  .basket_empty {
+    padding: 150px 0 150px;
+  }
+}

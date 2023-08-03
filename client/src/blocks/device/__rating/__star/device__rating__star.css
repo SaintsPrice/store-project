@@ -9,3 +9,15 @@
   top: 0;
   left: 0;
 }
+
+@media (max-width: 768px) {
+  .device__rating__star {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 425px) {
+  .device__rating__star {
+    font-size: 40px;
+  }
+}

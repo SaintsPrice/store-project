@@ -7,7 +7,7 @@ function Footer() {
       </div>
       <adress className="footer__links">
         <ul className="footer__links">
-          <li className="footer__link"><a className="footer__link-git" href="#"></a><a href="#" style={{textDecoration: 0}}>GitHub</a></li>
+          <li className="footer__link"><a className="footer__link-git" href="#"></a><a href="https://github.com/SaintsPrice" style={{textDecoration: 0}}>GitHub</a></li>
           <li className="footer__link"><a className="footer__link-vk" href="#"></a><a href="#" style={{textDecoration: 0}}>Vkontakte</a></li>
           <li className="footer__link"><a className="footer__link-tg" href="#"></a><a href="#" style={{textDecoration: 0}}>Telegram</a></li>
         </ul>

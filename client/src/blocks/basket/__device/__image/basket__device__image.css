@@ -3,3 +3,11 @@
   height: 150px;
   object-fit: cover;
 }
+
+@media (max-width: 500px) {
+  .basket__device__image {
+    width: 75px;
+    height: 75px;
+  }
+  
+}

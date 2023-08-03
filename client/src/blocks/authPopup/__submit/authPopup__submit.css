@@ -13,3 +13,11 @@
   margin-left: 10px;
   margin: 40px auto 40px;
 }
+
+@media (max-width: 425px) {
+  .authPopup__submit {
+    width: 250px;
+    border-radius: 5px;
+    margin: 20px auto 0;
+  }
+}

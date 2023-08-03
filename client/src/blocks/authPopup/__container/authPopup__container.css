@@ -1,6 +1,12 @@
 .authPopup__container {
   position: relative;
-  width: 500px;
+  max-width: 500px;
   background-color: #F8F1FF;
   border-radius: 20px;
+}
+
+@media (max-width: 425px) {
+  .authPopup__container {
+    max-width: 250px;
+  }
 }

@@ -9,3 +9,28 @@
   "img caption caption"
   ;
 }
+
+@media (max-width: 768px) {
+  .device {
+    grid-template-columns: 400px 150px 150px;
+    gap: 10px;
+    margin: 50px auto 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .device {
+    grid-template-columns: 200px 100px 100px;
+    gap: 10px;
+    margin: 30px auto 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .device {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 15px auto 0;
+  }
+}

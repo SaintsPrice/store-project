@@ -3,3 +3,9 @@
   position: relative;
   margin: 50px auto 150px;
 }
+
+@media (max-width:500px) {
+  .basket {
+    margin: 25px auto 50px;
+  }
+}

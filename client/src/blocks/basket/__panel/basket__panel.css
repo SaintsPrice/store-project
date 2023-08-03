@@ -10,3 +10,27 @@
   border-radius: 10px;
   background-color: #FFFFFF;
 }
+
+@media (max-width: 1600px) {
+  .basket__panel {
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .basket__panel {
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .basket__panel {
+    position: relative;
+    width: 375px;
+    margin: 0 auto;
+  }
+}
